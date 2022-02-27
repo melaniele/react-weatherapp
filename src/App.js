@@ -41,7 +41,7 @@ function App() {
               {recentlyViewed.length > 0 ?
                 recentlyViewed.map((city, index) => (
                   <NavDropdown.Item onClick={() => { navigate(`/City/${city.id}`) }} key={index}>
-                    {city.name}, {city.sys.country} {<img src={`http://openweathermap.org/images/flags/${city.sys.country.toLowerCase()}.png`} alt='' />}
+                    {city.name}, {city.sys.country} {<img src={`https://openweathermap.org/images/flags/${city.sys.country.toLowerCase()}.png`} alt='' />}
                   </NavDropdown.Item>)) :
                 <NavDropdown.ItemText>No city visited</NavDropdown.ItemText>}
             </NavDropdown>

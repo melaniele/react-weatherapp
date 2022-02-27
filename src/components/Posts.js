@@ -11,8 +11,8 @@ export default function Posts({ currentPosts, loading, viewedCity }) {
     currentPosts.map((city, index) => {
       var sr = new Date(city.sys.sunrise * 1000).toLocaleTimeString();
       var ss = new Date(city.sys.sunset * 1000).toLocaleTimeString();
-      let flag = "http://openweathermap.org/images/flags/" + city.sys.country.toLowerCase() + ".png";
-      var icon = "http://openweathermap.org/img/w/" + city.weather[0].icon + ".png";
+      let flag = "https://openweathermap.org/images/flags/" + city.sys.country.toLowerCase() + ".png";
+      var icon = "https://openweathermap.org/img/w/" + city.weather[0].icon + ".png";
 
       return (
         <Container className="mainForm" key={index}>
