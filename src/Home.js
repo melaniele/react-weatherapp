@@ -53,7 +53,7 @@ export default function Home({ viewedCity }) {
 
     async function fetchData(citiesID) {
         setLoading(true);
-        await fetch(`http://api.openweathermap.org/data/2.5/group?id=${citiesID}&units=metric&appid=e41d6ae36eeea5e12188edc91fa39d53`)
+        await fetch(`https://api.openweathermap.org/data/2.5/group?id=${citiesID}&units=metric&appid=e41d6ae36eeea5e12188edc91fa39d53`)
             .then((res) => {
                 if (res.status === 404) {
                     setError("Please enter a valid city. Ex: Toronto or Toronto, CA");

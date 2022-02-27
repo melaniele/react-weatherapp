@@ -27,7 +27,7 @@ export default function Local() {
     }
 
     async function fetchLocal(lat, long) {
-        await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=e41d6ae36eeea5e12188edc91fa39d53`)
+        await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=e41d6ae36eeea5e12188edc91fa39d53`)
             .then((res) => {
                 res.json().then(res =>{
                     setStatus("Loading...");
