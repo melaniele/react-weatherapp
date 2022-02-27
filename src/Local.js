@@ -1,10 +1,15 @@
 import { React, useState, useEffect } from "react";
+import Post from "./components/Post"
 
 export default function Local() {
-    const [lat, setLat] = useState(null);
-    const [long, setLong] = useState(null);
-    const [time, setTime] = useState(null);
     const [status, setStatus] = useState(null);
+    const [local, setLocal] = useState(null);
+
+    useEffect(() => {
+        if (local === null)
+            getLocation();
+    }, []);
+
 
     const getLocation = () => {
         if (!navigator.geolocation)
@@ -12,25 +17,29 @@ export default function Local() {
         else {
             setStatus("Locating...");
             navigator.geolocation.getCurrentPosition((pos) => {
-                console.log(pos);
-                setStatus(null);
-                setLat(pos.coords.latitude);
-                setLong(pos.coords.longitude);
-                setTime(pos.timestamp);
 
-            }, () => {
-                setStatus("Unable to retrieve your location");
-            })
+                fetchLocal(pos.coords.latitude, pos.coords.longitude)
+                setStatus(null);
+
+            }, setStatus("Locating...")
+            )
         }
     }
-    
+
+    async function fetchLocal(lat, long) {
+        await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=e41d6ae36eeea5e12188edc91fa39d53`)
+            .then((res) => {
+                res.json().then(res =>{
+                    setStatus("Loading...");
+                    setLocal(res);
+                })
+            }).catch(console.log)
+    }
+
+
     return (
-        <div className="App">
-            <button onClick={getLocation}>Get Location</button>
-            <h1>Coordinates</h1>
-            <p>{status}</p>
-            {lat && <p>Latitude: {lat}</p>}
-            {long && <p>Longitude: {long}</p>}
+        <div className="Local">
+            {local !== null ? <Post city={local} /> : status}
         </div>
     )
 

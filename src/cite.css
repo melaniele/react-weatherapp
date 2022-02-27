@@ -1,0 +1,71 @@
+@font-face{
+    font-family: nav;
+    src: url(./css/GochiHand-Regular.ttf);
+}
+
+@font-face{
+    font-family: summary;
+    src: url(./css/Corben-Regular.ttf);
+}
+
+.mainForm{
+    padding-top: 60px;
+    text-align: center;
+}
+
+body{
+    background-image: url(./css/bg.jpg);
+    background-size: cover;
+}
+
+#card-title{
+    font-size: 40px;   
+    color: rgb(234,182,118);
+    font-weight: bold;
+    
+}
+
+#card-title, #temp, #summary, span{
+    font-family: summary;
+}
+
+.navbar{
+    font-family: nav;
+    font-size: 25px;
+}
+
+#card{
+    margin-top: -30px;
+    padding-top: 25px;
+    width: 400px;
+}
+
+#flag{
+    width: 35px;
+}
+
+#icon{
+    width: 60px;
+}
+
+#summary{
+    font-size: 25px;
+    font-style: italic;
+}
+
+#temp{
+    font-size: 50px;
+}
+
+#list{
+    font-size: 20px;
+}
+
+#post, #pagination, #searchBar{
+    display: flex;
+    justify-content: center;
+}
+
+span{
+    font-weight: bold;
+}
