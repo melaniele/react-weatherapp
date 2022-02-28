@@ -6,7 +6,6 @@ import MyPagination from "./components/MyPagination"
 import Local from "./Local";
 
 export default function Home({ viewedCity }) {
-
     const [mount, setMount] = useState(true);
     const [cityList, setCityList] = useState([]);
     const [input, setInput] = useState(null);
@@ -31,7 +30,7 @@ export default function Home({ viewedCity }) {
     function submitHandler(e) {
         e.preventDefault();
         if (input == '') {
-            setError("Please enter value");
+            setError("Please enter a value");
         }
         else {
             getData(input);
@@ -70,7 +69,6 @@ export default function Home({ viewedCity }) {
             .catch(error => {
                 setError(error);
             });
-
     }
 
     function getCitiesID(cityName) {
@@ -132,7 +130,7 @@ export default function Home({ viewedCity }) {
 
             {mount ? <Local /> : ''}
             {!error ? <Posts currentPosts={currentPosts} loading={loading} viewedCity={viewedCity} /> : ''}
-            {mount === false && !error ? <MyPagination postsPerPage={postsPerPage} totalPosts={fetchedCities.length} currentPage={currentPage} paginate={paginate} prevPage={prevPage} nextPage={nextPage} /> : ''}
+            {!mount && !error ? <MyPagination postsPerPage={postsPerPage} totalPosts={fetchedCities.length} currentPage={currentPage} paginate={paginate} prevPage={prevPage} nextPage={nextPage} /> : ''}
 
         </div>
 

@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { Alert } from "react-bootstrap";
 import Post from "./components/Post"
 
 export default function Local() {
@@ -29,7 +30,7 @@ export default function Local() {
     async function fetchLocal(lat, long) {
         await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=e41d6ae36eeea5e12188edc91fa39d53`)
             .then((res) => {
-                res.json().then(res =>{
+                res.json().then(res => {
                     setStatus("Loading...");
                     setLocal(res);
                 })
@@ -39,7 +40,7 @@ export default function Local() {
 
     return (
         <div className="Local">
-            {local !== null ? <Post city={local} /> : status}
+            {local !== null ? <Post city={local} /> :  <Alert variant="info" >{status}</Alert>}
         </div>
     )
 
