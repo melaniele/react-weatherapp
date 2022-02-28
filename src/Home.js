@@ -25,12 +25,12 @@ export default function Home({ viewedCity }) {
 
 
     function onChangeHandler(e) {
-        setInput(e.target.value);
+        setInput(e.target.value.trim());
     }
 
     function submitHandler(e) {
         e.preventDefault();
-        if (input.trim() == '') {
+        if (input == '') {
             setError("Please enter value");
         }
         else {

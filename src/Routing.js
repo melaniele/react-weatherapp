@@ -5,8 +5,8 @@ import App from './App';
 
 const NotFound = () => {
     return <Alert variant="info" style={{ textAlign: "center" }}>Page is not found</Alert>
-
 }
+
 export default function Routing() {
     return (
         <BrowserRouter>
@@ -14,7 +14,6 @@ export default function Routing() {
                 <Route path="/" element={<App />} />
                 <Route path="/City/:id" element={<App />} />
                 <Route path="*" element={<NotFound />} />
-
             </Routes>
         </BrowserRouter>
 
