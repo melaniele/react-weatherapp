@@ -29,7 +29,7 @@ export default function Home({ viewedCity }) {
 
     function submitHandler(e) {
         e.preventDefault();
-        if (input == '') {
+        if (input === '') {
             setError("Please enter a value");
         }
         else {
