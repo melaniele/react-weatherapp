@@ -131,8 +131,6 @@ export default function Home({ viewedCity }) {
             {mount ? <Local /> : ''}
             {!error ? <Posts currentPosts={currentPosts} loading={loading} viewedCity={viewedCity} /> : ''}
             {!mount && !error ? <MyPagination postsPerPage={postsPerPage} totalPosts={fetchedCities.length} currentPage={currentPage} paginate={paginate} prevPage={prevPage} nextPage={nextPage} /> : ''}
-
         </div>
-
     )
 }
