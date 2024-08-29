@@ -1,5 +1,5 @@
 {
-  "name": "melaniele-a2",
+  "name": "TodaysWeather-melaniele",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,6 +15,9 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
+  },
+  "engines": {
+    "node": "20.x"
   },
   "scripts": {
     "start": "react-scripts start",
