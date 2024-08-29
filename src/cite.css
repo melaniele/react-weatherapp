@@ -9,11 +9,12 @@
 }
 
 .mainForm {
-  padding-top: 40px;
+  padding-top: 50px;
   text-align: center;
 }
 
 .cardsList {
+  padding-top: 30px;
   text-align: center;
   display: flex;
   flex-direction: row;
