@@ -1,71 +1,102 @@
-@font-face{
-    font-family: nav;
-    src: url(./css/GochiHand-Regular.ttf);
+@font-face {
+  font-family: nav;
+  src: url(./css/GochiHand-Regular.ttf);
 }
 
-@font-face{
-    font-family: summary;
-    src: url(./css/Corben-Regular.ttf);
+@font-face {
+  font-family: summary;
+  src: url(./css/Corben-Regular.ttf);
 }
 
-.mainForm{
-    padding-top: 60px;
-    text-align: center;
+.mainForm {
+  padding-top: 40px;
+  text-align: center;
 }
 
-body{
-    background-image: url(./css/bg.jpg);
-    background-size: cover;
+.cardsList {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-#card-title{
-    font-size: 40px;   
-    color: rgb(234,182,118);
-    font-weight: bold;
-    
+body {
+  background-image: url(./css/bg.jpg);
+  background-size: cover;
 }
 
-#card-title, #temp, #summary, span{
-    font-family: summary;
+#card-title {
+  font-size: 40px;
+  color: rgb(234, 182, 118);
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
 }
 
-.navbar{
-    font-family: nav;
-    font-size: 20px;
+#card-title,
+#temp,
+#summary {
+  font-family: summary;
 }
 
-#card{
-    margin-top: -30px;
-    padding-top: 25px;
-    width: 400px;
+.navbar {
+  font-family: nav;
+  font-size: 20px;
 }
 
-#flag{
-    width: 35px;
+#card {
+  margin-top: -30px;
+  padding-top: 25px;
+  width: 400px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content inside the card */
 }
 
-#icon{
-    width: 60px;
+.accordion-item {
+  border: none;
 }
 
-#summary{
-    font-size: 25px;
-    font-style: italic;
+#flag {
+  width: 35px;
 }
 
-#temp{
-    font-size: 50px;
+#icon {
+  width: 60px;
 }
 
-#list{
-    font-size: 20px;
+#summary {
+  font-size: 25px;
+  font-style: italic;
 }
 
-#post, #pagination, #searchBar{
-    display: flex;
-    justify-content: center;
+#temp {
+  font-size: 50px;
 }
 
-span{
-    font-weight: bold;
+#list {
+  font-size: 20px;
+}
+
+#post,
+#pagination,
+#searchBar {
+  display: flex;
+  justify-content: center;
+}
+
+span {
+  font-weight: Ø bold;
+}
+
+.status {
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 50px;
 }
